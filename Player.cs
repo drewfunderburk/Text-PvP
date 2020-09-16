@@ -9,11 +9,12 @@ namespace HelloWorld
         private string _name;
         private int _health;
         private int _damage;
-
+        private Item[] _inventory;
         public Player()
         {
             _health = 100;
             _damage = 10;
+            _inventory = new Item[10];
         }
 
         public Player(string nameVal, int healthVal, int damageVal)
@@ -21,11 +22,17 @@ namespace HelloWorld
             _name = nameVal;
             _health = healthVal;
             _damage = damageVal;
+            _inventory = new Item[10];
         }
 
-        public void EquipItem(Item weapon)
+        public void SetInventoryItem(int index, Item item)
         {
-            _damage += weapon.statBoost;
+            _inventory[index] = item;
+        }
+
+        public void EquipItem(int itemIndex)
+        {
+            _damage += _inventory[itemIndex].statBoost;
         }
         
         public string GetName()

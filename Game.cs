@@ -74,11 +74,11 @@ namespace HelloWorld
             //Equip item based on input value
             if (input == '1')
             {
-                player.EquipItem(_longSword);
+                player.SetInventoryItem(0, _longSword);
             }
             else if (input == '2')
             {
-                player.EquipItem(_dagger);
+                player.SetInventoryItem(1, _dagger);
             }
         }
 
